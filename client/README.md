@@ -9,5 +9,6 @@ Currently, two official plugins are available:
 
 
 Install dependencies : npm install;
-install tailwind, react-router-dom, react-icons
+install tailwind with vite
+install react-router-dom, react-icons
 clientserver : npm run dev
