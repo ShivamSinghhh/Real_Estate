@@ -8,7 +8,7 @@ const getUsers = (req, res) => {
   }
 };
 
-const signupHandler = async (req, res) => {
+const signupHandler = async (req, res,next) => {
   const { username, email, password } = req.body;
   const hashPassword = bcrypt.hashSync(password, 5);
   const lowerCaseEmail = email.toLowerCase();
@@ -20,7 +20,7 @@ const signupHandler = async (req, res) => {
     }).save();
     res.send({ msg: "user added successfully..!!" });
   } catch (error) {
-    res.status(500).json(error.message);
+    next(error)
   }
 };
 
