@@ -17,6 +17,7 @@ const SignIn = () => {
     event.preventDefault();
     setLoading(true);
     try {
+      // added server proxy for the backend in vite config file.
       const res = await fetch("users/signin", {
         method: "POST",
         headers: {
