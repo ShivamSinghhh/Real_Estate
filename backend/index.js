@@ -20,8 +20,9 @@ app.listen("3000", async () => {
 });
 
 app.use("/users", userRouter);
+
 app.use((err, req, res, next) => {
-  const statusCode = err.statusCode || 500;
+  const statusCode = err.status || 500;
   const message = err.message || "Internal Server Error";
   return res.status(statusCode).json({ success: false, statusCode, message });
 });
